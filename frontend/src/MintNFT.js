@@ -15,7 +15,7 @@ function MintNFT() {
     const [balanceArray, setBalanceArray] = useState();
     if (address.length > 0) {
         //Access a the contract
-        const contract = new kit.web3.eth.Contract(data.abi, "0x47A424A0975924C3d177470C519C8DBA37e16Ec9")
+        const contract = new kit.web3.eth.Contract(data.abi, "0xEB14217B406E75336DA5FCa338668c5b0E247124")
         //Array with address NFT's owner 
         const ownerAddress = [address, address, address, address, address]
         //Array with NFT's id     
@@ -30,7 +30,7 @@ function MintNFT() {
         //this function will coin NFT depending on the name you give 
         async function Mint(name) {
             console.log(balanceArray);
-            contract.methods.[name]().send({ from: address })
+            contract.methods.name().send({ from: address })
                 .on('transactionHash', function (hash) {
                     console.log(hash);
                 })
