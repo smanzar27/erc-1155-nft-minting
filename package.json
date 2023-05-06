@@ -16,9 +16,10 @@
     "@types/mocha": "^9.1.1",
     "@types/node": "^18.16.3",
     "chai": "^4.3.7",
-    "hardhat": "^2.14.0"
+    "hardhat": "^2.14.0",
+    "hardhat-deploy": "^0.11.27"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.8.3"
-  }
+    }
 }

@@ -1,8 +1,32 @@
-import { HardhatUserConfig } from "hardhat/config";
-import "@nomicfoundation/hardhat-toolbox";
+import "@nomiclabs/hardhat-ethers";
 
-const config: HardhatUserConfig = {
-  solidity: "0.8.18",
-};
+const ALCHEMY_API_KEY = "T6tinGxIjqNtBkXYKYLxLItaUqXq3dVm";
+const SEPOLIA_PRIVATE_KEY = "1feb98ba72e7fe929c0f1e0fb38474b6940508d2c14c75f5f4ecb49fc867b507";
 
-export default config;
+
+module.exports = {
+  defaultNetwork: "sepolia",
+  networks: {
+    hardhat: {
+    },
+    sepolia: {
+      url: `https://eth-sepolia.g.alchemy.com/v2/${ALCHEMY_API_KEY}`,
+      accounts: [SEPOLIA_PRIVATE_KEY]
+    }
+  },
+  solidity: {
+    version: "0.8.17",
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 200
+      }
+    }
+  },
+  etherscan: {
+    apiKey: "KEHAT2STSVG3WCD34EWXCJ6IHA4T3E16GF",
+  },
+  mocha: {
+    timeout: 40000
+  }
+}
